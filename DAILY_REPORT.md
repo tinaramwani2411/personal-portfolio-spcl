@@ -18,5 +18,4 @@ Required Upgrades:
 - Implement responsive layout.
 - Add project section and contact form.
 
-GitHub Frontend Link:
-https://github.com/yourusername/personal-portfolio-spcl
+GitHub Frontend Link:(https://github.com/tinaramwani2411/personal-portfolio-spcl/blob/main/index.html)
