@@ -3,18 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Tina Ramwani | Portfolio</title>
+    <meta name="description" content="Tina Ramwani — aspiring software developer. Portfolio showcasing projects, skills, and contact information.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
     <!-- ===== Navbar ===== -->
     <header>
         <nav class="navbar">
             <div class="container nav-inner">
                 <a class="logo" href="#home">Tina.</a>
-                <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
-                <ul class="nav-links">
+                <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+                <ul id="primary-navigation" class="nav-links">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#skills">Skills</a></li>
@@ -25,79 +30,85 @@
         </nav>
     </header>
 
-    <!-- ===== Hero Section ===== -->
-    <section id="home" class="hero">
-        <div class="container hero-content">
-            <h1>Hello, I'm <span>Tina Ramwani</span></h1>
-            <h3>Aspiring Software Developer</h3>
-            <p>I build clean, scalable and user-friendly applications.</p>
-            <div class="hero-buttons">
-                <a class="btn btn-primary" href="#projects">View Projects</a>
-                <a class="btn btn-outline" href="#contact">Contact Me</a>
+    <main id="main">
+        <!-- ===== Hero Section ===== -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <div class="hero-inner">
+                    <div class="hero-text">
+                        <h1>Hello, I'm <span>Tina Ramwani</span></h1>
+                        <h3>Aspiring Software Developer</h3>
+                        <p>I build clean, scalable and user-friendly applications.</p>
+                        <div class="hero-buttons">
+                            <a class="btn btn-primary" href="#projects">View Projects</a>
+                            <a class="btn btn-outline" href="#contact">Contact Me</a>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===== About Section ===== -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2>About Me</h2>
-            <p>
-                I am a Bachelor of Computer Applications student passionate about
-                backend development and problem solving. Currently learning Java,
-                Spring Boot and building real-world projects.
-            </p>
-        </div>
-    </section>
-
-    <!-- ===== Skills Section ===== -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2>My Skills</h2>
-            <div class="skills-container">
-                <div class="skill">Java</div>
-                <div class="skill">C++</div>
-                <div class="skill">HTML</div>
-                <div class="skill">CSS</div>
-                <div class="skill">JavaScript</div>
-                <div class="skill">SQL</div>
-                <div class="skill">Git</div>
+        <!-- ===== About Section ===== -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2>About Me</h2>
+                <p>
+                    I am a Bachelor of Computer Applications student passionate about
+                    backend development and problem solving. Currently learning Java,
+                    Spring Boot and building real-world projects.
+                </p>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===== Projects Section ===== -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2>Projects</h2>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <h3>ReportMate</h3>
-                    <p>Android complaint management system built using Java and Firebase.</p>
-                </article>
-
-                <article class="project-card">
-                    <h3>CheerUp</h3>
-                    <p>Goal-based activity suggestion website with interactive UI.</p>
-                </article>
-
-                <article class="project-card">
-                    <h3>Shrinath Bikes</h3>
-                    <p>E-commerce prototype with product listing and UI design.</p>
-                </article>
+        <!-- ===== Skills Section ===== -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2>My Skills</h2>
+                <div class="skills-container">
+                    <div class="skill">Java</div>
+                    <div class="skill">C++</div>
+                    <div class="skill">HTML</div>
+                    <div class="skill">CSS</div>
+                    <div class="skill">JavaScript</div>
+                    <div class="skill">SQL</div>
+                    <div class="skill">Git</div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ===== Contact Section ===== -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2>Contact Me</h2>
-            <p>Email: tinaramwani@email.com</p>
-            <p>LinkedIn: https://www.linkedin.com/in/tina-ramwani-02a9b9286/</p>
-            <p>GitHub: https://github.com/tinaramwani2411</p>
-        </div>
-    </section>
+        <!-- ===== Projects Section ===== -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2>Projects</h2>
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <h3>ReportMate</h3>
+                        <p>Android complaint management system built using Java and Firebase.</p>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>CheerUp</h3>
+                        <p>Goal-based activity suggestion website with interactive UI.</p>
+                    </article>
+
+                    <article class="project-card">
+                        <h3>Shrinath Bikes</h3>
+                        <p>E-commerce prototype with product listing and UI design.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Contact Section ===== -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2>Contact Me</h2>
+                <p>Email: tinaramwani@email.com</p>
+                <p>LinkedIn: https://www.linkedin.com/in/tina-ramwani-02a9b9286/</p>
+                <p>GitHub: https://github.com/tinaramwani2411</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
