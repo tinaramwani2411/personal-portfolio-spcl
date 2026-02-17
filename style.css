@@ -8,12 +8,19 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Outfit', sans-serif;
     background: #0f172a;
     color: #e2e8f0;
     line-height: 1.6;
 }
+
+/* ensure content not hidden under fixed header */
+body { padding-top: 76px; }
 
 h1, h2, h3 {
     font-family: 'Space Grotesk', sans-serif;
@@ -26,7 +33,7 @@ h1, h2, h3 {
 }
 
 .section {
-    padding: 100px 0;
+    padding: 120px 0;
     text-align: center;
 }
 
@@ -50,8 +57,6 @@ header {
     padding: 20px 0;
 }
 
-/* Stylish Logo */
-
 .logo {
     font-size: 24px;
     font-weight: 700;
@@ -60,14 +65,12 @@ header {
     -webkit-text-fill-color: transparent;
     text-decoration: none;
     letter-spacing: 1px;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .logo:hover {
     transform: scale(1.1);
 }
-
-/* Nav Links */
 
 .nav-links {
     display: flex;
@@ -80,12 +83,17 @@ header {
     color: #cbd5e1;
     font-weight: 500;
     position: relative;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .nav-links a:hover {
     color: #38bdf8;
 }
+
+/* Hamburger button (hidden on desktop) */
+.nav-toggle{
+    display:none;background:transparent;border:0;color:#cbd5e1;font-size:22px;cursor:pointer;padding:6px 8px;border-radius:6px}
+.nav-toggle:focus{outline:2px solid rgba(56,189,248,0.3)}
 
 /* ============================= */
 /* Hero Section */
@@ -98,7 +106,7 @@ header {
     justify-content: center;
     background: linear-gradient(135deg, #1e293b, #0f172a);
     text-align: center;
-    padding-top: 80px;
+    padding-top: 120px;
 }
 
 .hero span {
@@ -117,12 +125,14 @@ header {
     text-decoration: none;
     font-weight: 600;
     margin: 10px;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
+    cursor: pointer;
 }
 
 .btn-primary {
     background: linear-gradient(90deg, #38bdf8, #a78bfa);
     color: white;
+    border: none;
 }
 
 .btn-primary:hover {
@@ -141,7 +151,7 @@ header {
 }
 
 /* ============================= */
-/* Skills Cards */
+/* Skills Section */
 /* ============================= */
 
 .skills-grid {
@@ -155,8 +165,8 @@ header {
     background: #1e293b;
     padding: 30px;
     border-radius: 20px;
-    transition: 0.4s;
     border: 1px solid #334155;
+    transition: all 0.4s ease;
 }
 
 .skill-card:hover {
@@ -170,7 +180,7 @@ header {
 }
 
 /* ============================= */
-/* Project Cards */
+/* Projects Section */
 /* ============================= */
 
 .projects-grid {
@@ -184,10 +194,10 @@ header {
     background: #1e293b;
     padding: 30px;
     border-radius: 20px;
-    transition: 0.4s;
     border: 1px solid #334155;
     position: relative;
     overflow: hidden;
+    transition: all 0.4s ease;
 }
 
 .project-card::before {
@@ -206,7 +216,7 @@ header {
 }
 
 /* ============================= */
-/* Contact Form */
+/* Contact Section */
 /* ============================= */
 
 .contact-form {
@@ -254,4 +264,45 @@ footer {
     padding: 30px;
     text-align: center;
     border-top: 1px solid #334155;
+}
+
+/* ============================= */
+/* Responsive Design */
+/* ============================= */
+
+@media (max-width: 768px) {
+
+    /* keep header items on a single row for better alignment */
+    .navbar {flex-direction: row; align-items: center}
+
+    /* hide nav links by default on mobile; dropdown on toggle */
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 64px;
+        right: 12px;
+        width: 240px;
+        flex-direction: column;
+        gap: 12px;
+        background: rgba(15,23,42,0.95);
+        padding: 12px;
+        border-radius: 10px;
+        box-shadow: 0 12px 30px rgba(2,6,23,0.35);
+    }
+
+    .nav-links.active {display:flex}
+
+    /* show hamburger on mobile */
+    .nav-toggle{display:block}
+
+    .hero {height:auto;padding:120px 18px 40px}
+
+    /* Stack hero buttons vertically on narrow screens */
+    .hero-buttons{display:flex;flex-direction:column;gap:12px;align-items:center}
+    .btn{width:220px;max-width:84%}
+
+    .section {padding:100px 20px}
+
+    .skills-grid,
+    .projects-grid {grid-template-columns: 1fr}
 }
