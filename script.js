@@ -1,42 +1,54 @@
-document.addEventListener('DOMContentLoaded', function () {
-	const navToggle = document.querySelector('.nav-toggle');
-	const navLinks = document.querySelector('.nav-links');
+// ===============================
+// Mobile Navbar Toggle
+// ===============================
 
-	if (navToggle && navLinks) {
-		navToggle.addEventListener('click', () => {
-			const isOpen = navLinks.classList.toggle('show');
-			navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-		});
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.querySelector(".nav-links");
 
-		// Close mobile menu on link click
-		document.querySelectorAll('.nav-links a').forEach(a => {
-			a.addEventListener('click', () => {
-				navLinks.classList.remove('show');
-				navToggle.setAttribute('aria-expanded', 'false');
-			});
-		});
+if (navToggle) {
+    navToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
 
-		// Close when clicking outside the nav on small screens
-		document.addEventListener('click', (e) => {
-			if (!navLinks.contains(e.target) && !navToggle.contains(e.target)) {
-				navLinks.classList.remove('show');
-				navToggle.setAttribute('aria-expanded', 'false');
-			}
-		});
-	}
+        // Accessibility toggle
+        const expanded = navToggle.getAttribute("aria-expanded") === "true" || false;
+        navToggle.setAttribute("aria-expanded", !expanded);
+    });
+}
 
-	// Smooth scroll for anchor links (only when target exists)
-	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-		anchor.addEventListener('click', function (e) {
-			const href = this.getAttribute('href');
-			if (href && href.length > 1) {
-				const target = document.querySelector(href);
-				if (target) {
-					e.preventDefault();
-					target.scrollIntoView({behavior: 'smooth', block: 'start'});
-				}
-			}
-		});
-	});
-});
 
+// ===============================
+// Contact Form Validation
+// ===============================
+
+const form = document.querySelector(".contact-form");
+
+if (form) {
+    form.addEventListener("submit", function (e) {
+        e.preventDefault(); // stop page reload
+
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+
+        // Email regex pattern
+        const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+        if (name === "") {
+            alert("Please enter your name.");
+            return;
+        }
+
+        if (!email.match(emailPattern)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        if (message.length < 10) {
+            alert("Message must be at least 10 characters.");
+            return;
+        }
+
+        alert("Message sent successfully!");
+        form.reset();
+    });
+}
