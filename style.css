@@ -142,18 +142,28 @@ header {
   margin-bottom: 30px;
 }
 
-/* Buttons */
-.hero-buttons {
-  display: flex;
-  gap: 20px;
+/* ADD SAME HOVER ANIMATION TO ALL HERO BUTTONS */
+/* ===================================== */
+
+.hero-buttons .btn {
+  position: relative;
+  overflow: hidden;
 }
 
-.btn {
-  padding: 12px 28px;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: 0.3s ease;
+/* Smooth lift animation for all buttons */
+.hero-buttons .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.35);
+}
+
+/* Slight stronger glow for purple resume button */
+.hero-buttons .resume-btn:hover {
+  box-shadow: 0 12px 30px rgba(167, 139, 250, 0.5);
+}
+
+/* Ensure smooth transition */
+.hero-buttons .btn {
+  transition: all 0.3s ease;
 }
 
 /* Primary */
@@ -607,4 +617,31 @@ footer {
 
     .skills-grid,
     .projects-grid {grid-template-columns: 1fr}
+}
+
+/* contact info css */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #e2e8f0;
+    font-size: 16px;
+    transition: 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info a i {
+    font-size: 18px;
+    color: #38bdf8;   /* light blue accent */
+}
+
+.contact-info a:hover {
+    color: #38bdf8;
+    transform: translateX(5px);
 }
