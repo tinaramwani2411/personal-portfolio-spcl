@@ -15,6 +15,7 @@ This project involved designing and developing a fully responsive and modern Per
 The website was developed from scratch using core frontend technologies and deployed successfully for public access.
 
 Key Features Implemented
+
 1️⃣ Responsive Design
 
 Fully mobile-friendly layout
@@ -95,7 +96,7 @@ Form handling and validation
 
 Website deployment and hosting
 
-Challenges Faced
+Challenges Faced:
 
 Fixing EmailJS auto-reply logic
 
@@ -103,17 +104,7 @@ Handling success/error message display properly
 
 Maintaining responsive design across all devices
 
-Outcome
+Outcome:
 
 The portfolio website is now fully functional, responsive, and professionally deployed.
 It effectively showcases my technical skills, projects, and contact details for recruiters and internship opportunities.
-
-Future Improvements
-
-Add Dark/Light Mode toggle
-
-Improve SEO optimization
-
-Add project filtering feature
-
-Enhance animations with advanced JavaScript libraries
