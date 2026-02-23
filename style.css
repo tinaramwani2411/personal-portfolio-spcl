@@ -167,6 +167,18 @@ header {
   box-shadow: 0 10px 20px rgba(56, 189, 248, 0.4);
 }
 
+.resume-btn {
+    background: transparent;
+    border: 2px solid #a78bfa;
+    color: #a78bfa;
+    transition: 0.3s ease;
+}
+
+.resume-btn:hover {
+    background: #a78bfa;
+    color: #0f172a;
+}
+
 /* Secondary */
 .btn.secondary {
   border: 2px solid #38bdf8;
